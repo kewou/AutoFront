@@ -7,3 +7,8 @@
       <input [(ngModel)]="resa.etatResa" placeholder="etat">
     </label>
 </div>
+
+<h2>Les Réservations</h2>
+<ul class="heroes">
+  <li *ngFor="let resa of reservations">{{resa.id}}</li>
+</ul>

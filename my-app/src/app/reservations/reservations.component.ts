@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Reservation} from '../reservation';
+import {RESERVATIONS} from './mock-reservations';
 
 @Component({
   selector: 'app-reservations',
@@ -15,6 +16,8 @@ export class ReservationsComponent implements OnInit {
     etatResa: 'enCours',
     userId: 1
   };
+
+  reservations = RESERVATIONS;
   constructor() { }
 
   ngOnInit() {
