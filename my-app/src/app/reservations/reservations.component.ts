@@ -17,16 +17,20 @@ export class ReservationsComponent implements OnInit {
   };
 
   reservations: Reservation[];
-
+  reservationSelectionner: Reservation;
 
   constructor(private reservationService:ReservationService) { }
 
   getReservations(): void {
-    this.reservations =this.reservationService.getReservations();
+    this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations);
   }
 
   ngOnInit() {
     this.getReservations();
+  }
+
+  onSelect(reservation:Reservation): void{
+    this.reservationSelectionner=reservation;
   }
 
 }
