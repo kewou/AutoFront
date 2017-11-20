@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {ReservationService} from './reservations/service/reservation.service';
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,7 @@ import { ReservationsComponent } from './reservations/reservations.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

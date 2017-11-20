@@ -1,4 +1,4 @@
-import {Reservation} from '../reservation'
+import {Reservation} from '../modele/reservation';
 
 export const RESERVATIONS: Reservation[] = [
   {id:2, etatResa:'enCours'},

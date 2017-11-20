@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Reservation} from '../reservation';
-import {RESERVATIONS} from './mock-reservations';
+import {ReservationService} from './service/reservation.service';
 
 @Component({
   selector: 'app-reservations',
-  templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.css']
+  templateUrl: './assets/reservations.component.html',
+  styleUrls: ['./assets/reservations.component.css']
 })
 
 
@@ -17,10 +16,17 @@ export class ReservationsComponent implements OnInit {
     userId: 1
   };
 
-  reservations = RESERVATIONS;
-  constructor() { }
+  reservations: Reservation[];
+
+
+  constructor(private reservationService:ReservationService) { }
+
+  getReservations(): void {
+    this.reservations =this.reservationService.getReservations();
+  }
 
   ngOnInit() {
+    this.getReservations();
   }
 
 }
