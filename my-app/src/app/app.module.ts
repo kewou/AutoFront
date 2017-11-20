@@ -9,13 +9,15 @@ import {ReservationService} from './reservations/service/reservation.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './messages/service/message.service';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReservationsComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent,    
   ],
   imports: [
     BrowserModule,
