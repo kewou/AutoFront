@@ -8,6 +8,7 @@ import { ReservationsComponent } from './reservations/reservations.component';
 import {ReservationService} from './reservations/service/reservation.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './messages/service/message.service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MessageService } from './messages/service/message.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ReservationService, MessageService],
   bootstrap: [AppComponent]

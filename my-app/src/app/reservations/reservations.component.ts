@@ -9,6 +9,10 @@ import {ReservationService} from './service/reservation.service';
 
 
 export class ReservationsComponent implements OnInit {
+
+  reservations: Reservation[];
+  reservationSelectionner: Reservation;
+
   resa: Reservation = {
     id: 1,
     dateResa: new Date(),
@@ -16,21 +20,18 @@ export class ReservationsComponent implements OnInit {
     userId: 1
   };
 
-  reservations: Reservation[];
-  reservationSelectionner: Reservation;
-
   constructor(private reservationService:ReservationService) { }
 
   getReservations(): void {
     this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations);
   }
 
-  ngOnInit() {
-    this.getReservations();
-  }
-
   onSelect(reservation:Reservation): void{
     this.reservationSelectionner=reservation;
+  }
+
+  ngOnInit() {
+    this.getReservations();
   }
 
 }
