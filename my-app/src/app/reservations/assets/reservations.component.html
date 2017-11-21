@@ -3,10 +3,9 @@
 
 <h2>Les Réservations</h2>
 <ul class="reservations">
-  <li *ngFor="let resa of reservations"
-    [class.selected]="resa === selectedResa"
-    (click)="onSelect(resa)">
-    <span class="badge">{{resa.id}}</span> {{resa.etat}}
+  <li *ngFor="let resa of reservations">
+    <a routerLink="/detail/{{resa.id}}">
+      <span class="badge">{{resa.id}}</span> {{resa.etat}}
+    </a>
   </li>
 </ul>
-<app-reservations-detail [resa]="selectedResa"></app-reservations-detail>

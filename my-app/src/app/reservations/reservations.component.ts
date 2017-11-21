@@ -12,7 +12,7 @@ import {Reservation} from './modele/reservation';
 export class ReservationsComponent implements OnInit {
 
   reservations: Reservation[];
-  selectedResa: Reservation;
+  //selectedResa: Reservation;
 
   // resa: Reservation = {
   //   id: 1,
@@ -27,9 +27,7 @@ export class ReservationsComponent implements OnInit {
     this.reservationService.getReservations().subscribe(reservations => this.reservations = reservations);
   }
 
-  onSelect(reservation:Reservation): void{
-    this.selectedResa=reservation;
-  }
+//
 
   ngOnInit() {
     this.getReservations();

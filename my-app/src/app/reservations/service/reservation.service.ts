@@ -17,4 +17,9 @@ export class ReservationService {
     return of(RESERVATIONS);
   }
 
+  getResa(id: number): Observable<Reservation>{
+    this.messageService.add(`ReservationService: retourne une réservation id=${id}`);
+    return of(RESERVATIONS.find(resa => resa.id === id));
+  }
+
 }
