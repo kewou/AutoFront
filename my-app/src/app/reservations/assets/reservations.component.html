@@ -4,7 +4,7 @@
 <h2>Les Réservations</h2>
 <ul class="reservations">
   <li *ngFor="let resa of reservations">
-    <a routerLink="/detail/{{resa.id}}">
+    <a routerLink="/reservations/{{resa.id}}">
       <span class="badge">{{resa.id}}</span> {{resa.etat}}
     </a>
   </li>

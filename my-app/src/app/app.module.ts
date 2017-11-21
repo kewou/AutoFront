@@ -11,6 +11,9 @@ import { MessageService } from './messages/service/message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReservationsDetailComponent } from './reservations-detail/reservations-detail.component';
+import { UsersComponent } from './users/users.component';
+import { UserService } from './users/service/user.service';
+import { UsersDetailComponent } from './users-detail/users-detail.component';
 
 
 @NgModule({
@@ -19,14 +22,16 @@ import { ReservationsDetailComponent } from './reservations-detail/reservations-
     ReservationsComponent,
     MessagesComponent,
     DashboardComponent,
-    ReservationsDetailComponent,    
+    ReservationsDetailComponent,
+    UsersComponent,
+    UsersDetailComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ReservationService, MessageService],
+  providers: [ReservationService, MessageService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
