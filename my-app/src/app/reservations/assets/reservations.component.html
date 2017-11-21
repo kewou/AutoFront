@@ -1,14 +1,12 @@
 
-<h2>{{resa.etatResa}} Etat</h2>
-<div><span>id: </span>{{resa.id}}</div>
 
-<div>
-    <label>etat:
-      <input [(ngModel)]="resa.etatResa" placeholder="etat">
-    </label>
-</div>
 
 <h2>Les Réservations</h2>
-<ul class="heroes">
-  <li *ngFor="let resa of reservations">{{resa.id}}</li>
+<ul class="reservations">
+  <li *ngFor="let resa of reservations"
+    [class.selected]="resa === selectedResa"
+    (click)="onSelect(resa)">
+    <span class="badge">{{resa.id}}</span> {{resa.etat}}
+  </li>
 </ul>
+<app-reservations-detail [resa]="selectedResa"></app-reservations-detail>

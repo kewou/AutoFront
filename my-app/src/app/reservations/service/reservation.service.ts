@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {RESERVATIONS} from '../mock/mock-reservations';
+import {Reservation} from '../modele/reservation';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import {MessageService} from '../../messages/service/message.service';

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ReservationService} from './service/reservation.service';
+import {Reservation} from './modele/reservation';
 
 @Component({
   selector: 'app-reservations',
@@ -11,14 +12,14 @@ import {ReservationService} from './service/reservation.service';
 export class ReservationsComponent implements OnInit {
 
   reservations: Reservation[];
-  reservationSelectionner: Reservation;
+  selectedResa: Reservation;
 
-  resa: Reservation = {
-    id: 1,
-    dateResa: new Date(),
-    etatResa: 'enCours',
-    userId: 1
-  };
+  // resa: Reservation = {
+  //   id: 1,
+  //   dateResa: new Date(),
+  //   etatResa: 'enCours',
+  //   moniteurId: 1
+  // };
 
   constructor(private reservationService:ReservationService) { }
 
@@ -27,7 +28,7 @@ export class ReservationsComponent implements OnInit {
   }
 
   onSelect(reservation:Reservation): void{
-    this.reservationSelectionner=reservation;
+    this.selectedResa=reservation;
   }
 
   ngOnInit() {

@@ -10,6 +10,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './messages/service/message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReservationsDetailComponent } from './reservations-detail/reservations-detail.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     ReservationsComponent,
     MessagesComponent,
-    DashboardComponent,    
+    DashboardComponent,
+    ReservationsDetailComponent,    
   ],
   imports: [
     BrowserModule,

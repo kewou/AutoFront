@@ -1,0 +1,10 @@
+
+<div *ngIf="resa">
+  <h2>{{ resa.etat | uppercase }} Details</h2>
+  <div><span>id: </span>{{resa.id}}</div>
+  <div>
+    <label>etat:
+      <input [(ngModel)]="resa.etat" placeholder="etat"/>
+    </label>
+  </div>
+</div>
