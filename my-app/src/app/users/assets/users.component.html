@@ -1,3 +1,18 @@
-<p>
-  users works!
-</p>
+<h2>Les Inscrits</h2>
+<ul class="users">
+  <li *ngFor="let user of users">
+    <a routerLink="/users/{{user.id}}">
+      <span class="badge">{{user.id}}</span> {{user.nom}}
+    </a>
+  </li>
+</ul>
+
+<div>
+  <label>Nom:
+    <input #userName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(userName.value); userName.value=''">
+    Inscription
+  </button>
+</div>
