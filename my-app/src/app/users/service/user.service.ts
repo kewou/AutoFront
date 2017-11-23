@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {User} from '../../users/modele/reservation';
+import {User} from '../../users/modele/user';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -14,10 +14,10 @@ export class UserService {
   private usersUrl ='api/users';
 
   constructor(private http: HttpClient,
-              private message: MessageService) { }
+              private messageService: MessageService) { }
 
   /** POST: add a new user to the server */
-  addUser (user: User): Observable<user> {
+  addUser (user: User): Observable<User> {
     return this.http.post<User>(this.usersUrl, user, httpOptions).pipe(
       tap((user: User) => this.log(`added user w/ id=${user.id}`)),
       catchError(this.handleError<User>('addUser'))
@@ -56,7 +56,7 @@ export class UserService {
     return this.http.get<User[]>(this.usersUrl)
       .pipe(
         tap(users => this.log(`fetched users`)),
-        catchError(this.handError('getAllUsers',[]))
+        catchError(this.handleError('getAllUsers',[]))
       );
   }
 

@@ -19,7 +19,7 @@ export class UsersDetailComponent implements OnInit {
     private location: Location
   ) {}
 
-  getUneRservation(): void {
+  getUser(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.userService.getUser(id)
       .subscribe(user => this.user = user);

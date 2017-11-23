@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   getReservations(): void{
     this.reservationService.getReservations()
-    .subscribe(reservations => this.reservations = reservations.slice(1,3);
+    .subscribe(reservations => this.reservations = reservations.slice(1,3));
   }
 
   ngOnInit() {

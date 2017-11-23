@@ -15,6 +15,9 @@ import { ReservationsDetailComponent } from './reservations-detail/reservations-
 import { UsersComponent } from './users/users.component';
 import { UserService } from './users/service/user.service';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { UsersInscriptionComponent } from './users-inscription/users-inscription.component';
+import { UsersConnexionComponent } from './users-connexion/users-connexion.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { UsersDetailComponent } from './users-detail/users-detail.component';
     ReservationsDetailComponent,
     UsersComponent,
     UsersDetailComponent,
+    UsersInscriptionComponent,
+    UsersConnexionComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
