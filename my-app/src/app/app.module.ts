@@ -18,6 +18,8 @@ import { UsersDetailComponent } from './users-detail/users-detail.component';
 import { UsersInscriptionComponent } from './users-inscription/users-inscription.component';
 import { UsersConnexionComponent } from './users-connexion/users-connexion.component';
 import { MenuComponent } from './menu/menu.component';
+import { AProposComponent } from './a-propos/a-propos.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { MenuComponent } from './menu/menu.component';
     UsersInscriptionComponent,
     UsersConnexionComponent,
     MenuComponent,
+    AProposComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,

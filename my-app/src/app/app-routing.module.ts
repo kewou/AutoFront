@@ -6,9 +6,15 @@ import { ReservationsComponent } from './reservations/reservations.component';
 import { ReservationsDetailComponent} from './reservations-detail/reservations-detail.component';
 import { UsersComponent} from './users/users.component';
 import { UsersDetailComponent} from './users-detail/users-detail.component';
+import {MenuComponent} from './menu/menu.component';
+import {AppComponent} from './app.component';
+import {AProposComponent} from './a-propos/a-propos.component';
+import {AccueilComponent} from './accueil/accueil.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', component: AccueilComponent},
+  { path: 'a-propos', component: AProposComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'reservations', component: ReservationsComponent },
   { path: 'reservations/:id', component: ReservationsDetailComponent},
