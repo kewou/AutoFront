@@ -15,11 +15,12 @@ import { ReservationsDetailComponent } from './reservations-detail/reservations-
 import { UsersComponent } from './users/users.component';
 import { UserService } from './users/service/user.service';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
-import { UsersInscriptionComponent } from './users-inscription/users-inscription.component';
-import { UsersConnexionComponent } from './users-connexion/users-connexion.component';
 import { MenuComponent } from './menu/menu.component';
 import { AProposComponent } from './a-propos/a-propos.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { CalendrierComponent } from './calendrier/calendrier.component';
 
 
 @NgModule({
@@ -31,11 +32,12 @@ import { AccueilComponent } from './accueil/accueil.component';
     ReservationsDetailComponent,
     UsersComponent,
     UsersDetailComponent,
-    UsersInscriptionComponent,
-    UsersConnexionComponent,
     MenuComponent,
     AProposComponent,
     AccueilComponent,
+    ConnexionComponent,
+    InscriptionComponent,
+    CalendrierComponent,
   ],
   imports: [
     BrowserModule,

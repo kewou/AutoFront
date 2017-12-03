@@ -10,11 +10,18 @@ import {MenuComponent} from './menu/menu.component';
 import {AppComponent} from './app.component';
 import {AProposComponent} from './a-propos/a-propos.component';
 import {AccueilComponent} from './accueil/accueil.component';
+import {ConnexionComponent} from './connexion/connexion.component';
+import {InscriptionComponent} from './inscription/inscription.component';
+import {CalendrierComponent} from './calendrier/calendrier.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: AccueilComponent},
   { path: 'a-propos', component: AProposComponent},
+  { path: 'calendrier', component: CalendrierComponent},
+  { path: 'connexion', component: ConnexionComponent},
+  { path: 'inscription', component: InscriptionComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'reservations', component: ReservationsComponent },
   { path: 'reservations/:id', component: ReservationsDetailComponent},
