@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from '../../users/modele/user';
+import {Reservation} from '../../reservations/modele/reservation';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -11,15 +12,27 @@ const httpOptions = {headers: new HttpHeaders({ 'Content-Type': 'application/jso
 @Injectable()
 export class UserService {
 
-  private usersUrl ='api/users';
+  private usersUrl ='http://localhost/Beezy/AutoEcole/web/app_dev.php/api/users';
+  private resaUrl ='api/reservations';
 
   constructor(private http: HttpClient,
               private messageService: MessageService) { }
 
+  getAllUsers(): Observable<User[]>{
+    return this.http.get<User[]>(this.usersUrl)
+      .pipe(
+        tap(users => this.log(`fetched users`)),
+        catchError(this.handleError('getAllUsers',[]))
+      );
+  }
+// getReservation(id:number):Observable<Reservation>{
+//
+// }
+
   /** POST: add a new user to the server */
   addUser (user: User): Observable<User> {
     return this.http.post<User>(this.usersUrl, user, httpOptions).pipe(
-      tap((user: User) => this.log(`added user w/ id=${user.id}`)),
+      tap((user: User) => this.log(`added user w/ id=${user.getId()}`)),
       catchError(this.handleError<User>('addUser'))
     );
   }
@@ -35,7 +48,7 @@ export class UserService {
   /** PUT: update the user on the server */
   updateUser (user: User): Observable<any> {
     return this.http.put(this.usersUrl, user, httpOptions).pipe(
-      tap(_ => this.log(`updated user id=${user.id}`)),
+      tap(_ => this.log(`updated user id=${user.getId()}`)),
       catchError(this.handleError<any>('updateUser'))
     );
   }
@@ -43,21 +56,13 @@ export class UserService {
 
   /** DELETE: delete the user from the server */
   deleteUser (user: User | number): Observable<User> {
-    const id = typeof user === 'number' ? user : user.id;
+    const id = typeof user === 'number' ? user : user.getId();
     const url = `${this.usersUrl}/${id}`;
 
     return this.http.delete<User>(url, httpOptions).pipe(
       tap(_ => this.log(`deleted user id=${id}`)),
       catchError(this.handleError<User>('deleteUser'))
     );
-  }
-
-  getAllUsers(): Observable<User[]>{
-    return this.http.get<User[]>(this.usersUrl)
-      .pipe(
-        tap(users => this.log(`fetched users`)),
-        catchError(this.handleError('getAllUsers',[]))
-      );
   }
 
   /**
